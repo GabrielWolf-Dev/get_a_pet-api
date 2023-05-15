@@ -7,6 +7,8 @@ const { imageUpload } = require("../helpers/image-upload");
 
 router.get("/", PetController.getAll);
 router.get("/mypets", verifyToken, PetController.getAllUserPets);
+router.get("/myadoptions", verifyToken, PetController.getAllUserAdoptions);
+router.get("/:id", verifyToken, PetController.getPetById);
 router.post(
   "/create",
   verifyToken,
